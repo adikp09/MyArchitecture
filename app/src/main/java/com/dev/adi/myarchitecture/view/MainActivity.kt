@@ -1,7 +1,8 @@
-package com.dev.adi.myarchitecture
+package com.dev.adi.myarchitecture.view
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import com.dev.adi.myarchitecture.R
 
 class MainActivity : AppCompatActivity() {
 
