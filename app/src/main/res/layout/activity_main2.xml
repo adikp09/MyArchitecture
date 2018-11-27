@@ -6,5 +6,73 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.Main2Activity">
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            style="@style/HeaderBar"
+            app:title="Tic-Tac-Toe"
+            android:elevation="4dp">
 
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset"
+                android:layout_gravity="right|center"
+                tools:layout_editor_absoluteX="322dp" android:textSize="18sp" tools:layout_editor_absoluteY="19dp"
+                android:layout_margin="10dp" android:id="@+id/tv_reset"/>
+
+    </android.support.v7.widget.Toolbar>
+    <GridLayout
+            android:columnCount="3"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:id="@+id/gridLayout"
+            android:layout_marginTop="76dp">
+        <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp" android:id="@+id/button5"/>
+        <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp" android:id="@+id/button4"/>
+        <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp" android:id="@+id/button"/>
+
+        <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp" android:id="@+id/button9"/>
+        <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp" android:id="@+id/button6"/>
+        <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp" android:id="@+id/button8"/>
+
+        <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp" android:id="@+id/button10"/>
+        <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp" android:id="@+id/button11"/>
+        <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp" android:id="@+id/button7"/>
+    </GridLayout>
+
+    <TextView
+            android:text="X"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView" android:textSize="36sp"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+            android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="@+id/gridLayout"
+            app:layout_constraintEnd_toEndOf="@+id/gridLayout"
+    />
+    <TextView
+            android:text="Winner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView" app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="@+id/textView" android:textSize="18sp"/>
 </android.support.constraint.ConstraintLayout>
