@@ -1,4 +1,4 @@
-package com.dev.adi.myarchitecture.view;
+package com.dev.adi.myarchitecture.controller;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
