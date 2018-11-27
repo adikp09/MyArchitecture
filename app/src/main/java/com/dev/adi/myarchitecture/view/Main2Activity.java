@@ -1,4 +1,4 @@
-package com.dev.adi.myarchitecture.view_model;
+package com.dev.adi.myarchitecture.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
