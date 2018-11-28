@@ -6,12 +6,11 @@ import static com.dev.adi.myarchitecture.model.Player.O;
 import static com.dev.adi.myarchitecture.model.Player.X;
 
 public class Board {
+    private Cell cell[][] = new Cell[3][3];
 
     private Boolean isOver;
     private Player turnPlayer;
     private Player isWinner;
-
-    private Cell cell[][] = new Cell[3][3];
 
     public Board() {
         reset();
