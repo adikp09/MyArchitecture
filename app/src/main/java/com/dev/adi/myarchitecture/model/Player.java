@@ -1,4 +1,3 @@
 package com.dev.adi.myarchitecture.model;
 
-public class Player {
-}
+public enum  Player { X, O, Draw }
