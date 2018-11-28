@@ -67,17 +67,30 @@
                 android:layout_height="100dp" android:id="@+id/button7"/>
     </GridLayout>
 
-    <TextView
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView" android:textSize="36sp"
-            app:layout_constraintTop_toBottomOf="@+id/gridLayout"
-            android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="@+id/gridLayout"
-            app:layout_constraintEnd_toEndOf="@+id/gridLayout"
-    />
-    <TextView
-            android:text="Winner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView" app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="@+id/textView" android:textSize="18sp"/>
+            android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gridLayout" app:layout_constraintEnd_toEndOf="@+id/gridLayout"
+            android:id="@+id/textViewGrup1"
+            android:gravity="center"
+            android:visibility="gone"
+            tools:visibility="visible">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+                android:textSize="40sp"
+                android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="@+id/gridLayout"
+                app:layout_constraintEnd_toEndOf="@+id/gridLayout"
+        />
+        <TextView
+                android:text="Winner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView2"
+                android:textSize="30sp"
+                app:layout_constraintTop_toBottomOf="@+id/textView" app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="@+id/textView"/>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
