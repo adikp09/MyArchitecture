@@ -1,7 +1,5 @@
 package com.dev.adi.myarchitecture.model;
 
-import android.util.Log;
-
 import static com.dev.adi.myarchitecture.model.Player.O;
 import static com.dev.adi.myarchitecture.model.Player.X;
 
@@ -12,8 +10,11 @@ public class Board {
     private Player turnPlayer;
     private Player isWinner;
 
-    public Board() {
-        reset();
+//    public Player player1;
+//    public Player player2;
+
+    public Board(String p1, String p2) {
+        reset(p1, p2);
     }
 
     public void clearCellValue() {
@@ -24,12 +25,14 @@ public class Board {
         }
     }
 
-    public void reset() {
+    public void reset(String pOne, String pTwo) {
         clearCellValue();
         isWinner = null;
         isOver = false;
         turnPlayer = X;
     }
+
+
 
     public Player getIsWinner() {
         return isWinner;
@@ -65,14 +68,10 @@ public class Board {
     }
 
     public boolean isDraw() {
-        Log.e("isDraw", "1");
         Boolean isDraw = true;
         for (int i = 0; i < 3; i++) {
-            Log.e("i", "2");
             for (int j = 0; j < 3; j++) {
-                Log.e("j", "3");
                 if (cell[i][j].getCell() == null) {
-                    Log.e("isDraw", turnPlayer.toString());
                     isDraw = false;
                 }
             }

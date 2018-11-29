@@ -2,7 +2,6 @@ package com.dev.adi.myarchitecture.controller;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,9 +17,10 @@ public class Main2Activity extends AppCompatActivity {
     private Board model;
 
     private Button button;
-    private TextView textView;
+    private TextView textView, textViewOne, textViewTwo;
     private View textViewGrup;
     private GridLayout gridLayout;
+    private String playerOneName, playerTwoName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +30,17 @@ public class Main2Activity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         textViewGrup = findViewById(R.id.textViewGrup1);
         gridLayout = findViewById(R.id.gridLayout);
+        textViewOne = findViewById(R.id.tv_p1);
+        textViewTwo = findViewById(R.id.tv_p2);
 
-        model = new Board();
+        //intent
+        playerOneName = getIntent().getExtras().getString("playerOneName");
+        playerTwoName = getIntent().getExtras().getString("playerTwoName");
+
+        textViewOne.setText(playerOneName);
+        textViewTwo.setText(playerTwoName);
+
+        model = new Board(playerOneName, playerTwoName);
     }
 
     public void onClickBtn(View v) {
@@ -40,25 +49,32 @@ public class Main2Activity extends AppCompatActivity {
         String tag = (String) button.getTag();
         int row = Integer.valueOf(tag.substring(0,1));
         int col = Integer.valueOf(tag.substring(1,2));
-        Log.i("this", "Row: [" + row + "," + col + "]");
 
         Player move = model.setBoardValue(row, col);
 
         if (move != null) {
             button.setText(move.toString());
             if (model.getIsWinner() != null) {
-                textView.setText(move.toString());
+                checkNamePlayer(move.toString());
                 textViewGrup.setVisibility(View.VISIBLE);
             }
         }
 
     }
 
+    public void checkNamePlayer(String currenPlayer) {
+        if (currenPlayer == "X") {
+            textView.setText(playerOneName);
+        } else {
+            textView.setText(playerTwoName);
+        }
+    }
+
     public void resetGame() {
         textViewGrup.setVisibility(View.GONE);
         textView.setText("");
 
-        model.reset();
+        model.reset(playerOneName, playerTwoName);
         for (int i = 0; i < gridLayout.getChildCount(); i++) {
             ((Button) gridLayout.getChildAt(i)).setText("");
         }
